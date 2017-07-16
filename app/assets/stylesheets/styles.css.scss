@@ -206,3 +206,44 @@ a#by-tab {
 a#by-tab:hover {
   color: #ffffff;
 }
+
+
+// Home
+
+.jumbotron {
+	max-width: 2400px;
+	min-height: 430px;
+	margin: 10px auto;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	background-image:url('gitview-bgd.jpg');
+  background-size: 100%;
+}
+
+.jumbotron h1, .jumbotron .h1 {
+  color: #ffffff;
+  font-size: 3.5em;
+  padding-top: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+}
+
+.jumbotron h2, .jumbotron .h2 {
+  color: #ffffff;
+  padding-top: 15px;
+  font-size: 3em;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+#signup {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
