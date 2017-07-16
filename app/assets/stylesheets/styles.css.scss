@@ -52,3 +52,153 @@ body {
   color: #181842;
   font-size: 1.5em;
 }
+
+// Navbar
+.navbar-nav, .navbar-right {
+  margin: auto;
+}
+
+.navbar-default {
+  padding: 5px 20px;
+  max-height: 65px;
+}
+.navbar-default .navbar-nav > li > a {
+  font-size: 1.35em;
+  background-color: #181842;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover 
+.navbar-default .navbar-nav > li > a:focus {
+  background-color: #181842;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > a, 
+.navbar-default .navbar-nav > a:hover, 
+.navbar-default .navbar-nav > a:focus {
+  background-color: #181842;
+  color: #d3e0f7;
+}
+
+#logo {
+  font-size: 1.6em;
+  font-weight: 600;
+  padding-top: 7px;
+}
+
+.navbar-brand {
+  padding: 5px 25px;
+  padding-left: 10px;
+  letter-spacing: 2px;
+}
+
+#logo:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.navbar-brand > img {
+  display: inline;
+  height: 40px;
+  width: 40px;
+}
+
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: #181842;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {
+  background-color: #181842;
+  color: #d3e0f7;
+}
+
+ul.dropdown-menu, .divider {
+  margin: auto;
+}
+
+.nav .nav-divider {
+  height: 1px;
+  margin: auto !important;
+  overflow: hidden;
+  background-color: #ffffff !important;
+}
+
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    background-color: #ffffff;
+    color: #181842;
+  }
+  
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
+    background-color: #181842;
+    color: #ffffff;
+  }
+  
+  .navbar-nav .navbar-right {
+    margin: auto !important;
+  }
+  
+  .nav .nav-divider {
+  height: 1px;
+  margin: auto !important;
+  overflow: hidden;
+  background-color: #ffffff !important;
+  }
+  
+  .dropdown-menu .divider {
+    height: 1px;
+    margin: auto !important;
+    overflow: hidden;
+    background-color: #ffffff !important;
+  }
+  
+  ul.dropdown-menu li.divider {
+    background-color: #ffffff !important;
+  }
+}
+
+//  Footer credits pill
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+.nav-pills {
+  background-color: #181842;
+}
+
+.nav-pills > li > a:hover {
+  border-radius: 0;
+  background-color: #181842;
+  color: #ffffff;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  border-radius: 0;
+}
+
+.nav > li > a#by-tab {
+  padding: 5px 10px;
+  background-color: #181842;
+}
+
+a#by-tab {
+  color: #ffffff;
+}
+
+a#by-tab:hover {
+  color: #ffffff;
+}
