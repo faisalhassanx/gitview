@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  VALID_URL_REGEX = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
+  VALID_URL_REGEX = /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i
   
   validates :name,    presence: true, length: { maximum: 35 }
   validates :tagline, presence: true,  length: { maximum: 80 }
