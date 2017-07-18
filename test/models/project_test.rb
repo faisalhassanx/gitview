@@ -18,4 +18,19 @@ class ProjectTest < ActiveSupport::TestCase
     assert_not @project.valid?
   end
   
+  test "tagline should be present" do
+    @project.tagline = " "
+    assert_not @project.valid?
+  end
+  
+  test "description should be present" do
+    @project.description = " "
+    assert_not @project.valid?
+  end
+  
+  test "link should be present" do
+    @project.link = " "
+    assert_not @project.valid?
+  end
+  
 end
