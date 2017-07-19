@@ -26,7 +26,16 @@ class ProjectsTest < ActionDispatch::IntegrationTest
   test "should get projects listing" do
     get projects_path
     assert_template 'projects/index'
-    assert_match @project.name, response.body
-    assert_match @project2.name, response.body
+    assert_select "a[href=?]", project_path(@project), text: @project.name
+    assert_select "a[href=?]", project_path(@project2), text: @project2.name
+  end
+  
+  test 'should get projects show page' do
+    get project_path(@project)
+    assert_template 'projects/show'
+    assert_match @project.name.titleize, response.body
+    assert_match @project.tagline.titleize, response.body
+    assert_match @project.description, response.body
+    assert_match @developer.name.titleize, response.body
   end
 end

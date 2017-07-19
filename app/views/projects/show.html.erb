@@ -1,0 +1,11 @@
+<h1 class="text-center"><%= @project.name.titleize %></h1>
+
+<div class="col-md-8 col-md-offset-2">
+  <h3 class="text-center">
+    <%= @project.tagline.titleize %>
+  </h3><hr />
+  <p><%= @project.description %></p><br />
+  <h4>Created by: <%= @project.developer.name.titleize %></h4>
+  <div class="pull-right">Posted: <%= time_ago_in_words(@project.created_at) %> ago</div><br />
+  
+</div>
