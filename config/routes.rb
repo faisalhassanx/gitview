@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
-root "pages#home"
+  get '/projects' => 'projects#index'
+  
+  root "pages#home"
 
 end
