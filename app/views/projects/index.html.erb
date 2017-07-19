@@ -6,8 +6,8 @@
       <section class="center"></section>
     </div>
     <div class="col-md-8 well">
-      <h3><%= project.name %></h3>
-      <h3><%= project.tagline %></h3>
+      <h3><%= link_to project.name.titleize, project_path(project) %></h3>
+      <h3><%= project.tagline.titleize %></h3>
       <p>
         <span class="quiet"><small>Posted <%= time_ago_in_words(project.created_at) %> ago</small></span>&nbsp;|&nbsp;
         <span class="quiet"><small>Updated <%= time_ago_in_words(project.updated_at) %> ago</small></span>
