@@ -6,4 +6,7 @@ class Project < ApplicationRecord
   validates :description, presence: true, length: { within: 100..1000 }
   validates :link, presence: true, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
   validates :github, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
+  validates :developer_id, presence: true
+  
+  belongs_to :developer
 end

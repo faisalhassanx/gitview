@@ -10,4 +10,7 @@ class Developer < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :website, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
   validates :github, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
+  
+  has_many :projects, dependent: :destroy
+  
 end
