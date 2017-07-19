@@ -1,19 +1,47 @@
-<h1 class= "text-center">Projects</h1>
-
-<% @projects.each do |project| %>
-  <div class="row">
-    <div class="col-md-2">
-      <section class="center"></section>
-    </div>
-    <div class="col-md-8 well">
-      <h3><%= link_to project.name.titleize, project_path(project) %></h3>
-      <h3><%= project.tagline.titleize %></h3>
-      <p>
-        <span class="quiet"><small>Posted <%= time_ago_in_words(project.created_at) %> ago</small></span>&nbsp;|&nbsp;
-        <span class="quiet"><small>Updated <%= time_ago_in_words(project.updated_at) %> ago</small></span>
-      </p>
-      <%= link_to icon('globe'), project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;
-      <%= link_to icon('code'), project.github, class: "fa-2x fa-icon", target: '_blank' %>
-    </div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+    <h1 class="text-center">Projects</h1>
+    <hr />
+    <% @projects.each do |project| %>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <section class="developer-info text-center">
+            <%= gravatar_for project.developer, size: 160 %>
+            <h4><strong>Developer: <%= project.developer.name %></strong></h4>
+          </section>
+        </div>
+        
+        <div class="project-info col-lg-9 col-md-9 col-sm-9 well">
+          <div class="row">
+            <div class="col-md-7">
+              <h2>
+                <%= link_to project.name.titleize, project %>
+                </h2>
+              <h4><strong><%= project.tagline %></strong></h4>
+            </div>
+            <div class="col-md-5  hidden-xs">
+              <div class="pull-right">
+                <%= link_to icon('globe'), project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
+                <%= link_to icon('code'), project.github, class: "fa-2x fa-icon", target: '_blank' %>
+              </div>
+            </div>
+          </div>
+          <p>
+            
+          </p>
+          <p>
+            <span class="quiet">
+              <small>Posted: <%= time_ago_in_words(project.created_at) %> ago</small> ||
+              <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small>
+            </span>
+        </div>
+      </div>
+      <hr />
+    <% end %>
+    
   </div>
-<% end %>
+</div>
+
+<div class="text-center">
+
+</div>
