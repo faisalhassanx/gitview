@@ -1,1 +1,16 @@
-<h1>Projects</h1>
+<h1 class= "text-center">Projects</h1>
+
+<% @projects.each do |project| %>
+  <div class="row">
+    <div class="col-md-2">
+      <section class="center"></section>
+    </div>
+    <div class="col-md-8 well">
+      <h3><%= project.name %></h3>
+      <h3><%= project.tagline %></h3>
+      <p>
+        <span class="quiet"><small>Created <%= time_ago_in_words(project.created_at) %> ago</small></span>
+      </p>
+    </div>
+  </div>
+<% end %>

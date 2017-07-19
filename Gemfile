@@ -19,6 +19,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 group :production do
