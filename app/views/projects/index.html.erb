@@ -9,8 +9,11 @@
       <h3><%= project.name %></h3>
       <h3><%= project.tagline %></h3>
       <p>
-        <span class="quiet"><small>Created <%= time_ago_in_words(project.created_at) %> ago</small></span>
+        <span class="quiet"><small>Posted <%= time_ago_in_words(project.created_at) %> ago</small></span>&nbsp;|&nbsp;
+        <span class="quiet"><small>Updated <%= time_ago_in_words(project.updated_at) %> ago</small></span>
       </p>
+      <%= link_to icon('globe'), project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;
+      <%= link_to icon('code'), project.github, class: "fa-2x fa-icon", target: '_blank' %>
     </div>
   </div>
 <% end %>
