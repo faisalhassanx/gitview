@@ -1,4 +1,6 @@
 class Developer < ApplicationRecord
+  before_save { self.email = email.downcase }
+  
   VALID_URL_REGEX = /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\-.]+\.[a-z]+\z/i
   
