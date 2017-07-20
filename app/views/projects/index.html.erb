@@ -11,16 +11,16 @@
           </section>
         </div>
         
-        <div class="project-info col-lg-9 col-md-9 col-sm-9 well">
+        <div class="project-info col-lg-9 col-md-9 col-sm-9 well" id="index-well">
           <div class="row">
             <div class="col-md-7">
               <h2>
                 <%= link_to project.name.titleize, project %>
                 </h2>
-              <h4><strong><%= project.tagline %></strong></h4>
+              <h4><strong><%= project.tagline.titleize %></strong></h4>
             </div>
             <div class="col-md-5  hidden-xs">
-              <div class="pull-right">
+              <div class="pull-right icon-index">
                 <%= link_to icon('globe'), project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
                 <%= link_to icon('code'), project.github, class: "fa-2x fa-icon", target: '_blank' %>
               </div>
