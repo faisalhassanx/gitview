@@ -24,6 +24,20 @@ class DevelopersController < ApplicationController
     end
   end
   
+  def edit
+    @developer = Develoepr.find(params[:id])
+  end
+  
+  def update
+    if @developer.update(developer_params)
+      flash[:success] = "Account updated successfully"
+      redirect_to developer_path(@developer)
+    else
+      flash[:danger] = "Please correct the following errors and try again"
+      render 'edit'
+    end
+  end
+  
   
   
   
