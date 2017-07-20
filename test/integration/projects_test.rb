@@ -5,7 +5,8 @@ class ProjectsTest < ActionDispatch::IntegrationTest
   def setup
     @developer = Developer.create!(name: "Faisal", email: "faisal@example.com", 
                            website: "https://faisalhassanx.bitbucket.io/", 
-                           github: "https://github.com/faisalhassanx")
+                           github: "https://github.com/faisalhassanx",
+                           password: "password", password_confirmation: "password")
     @project = Project.create(name: "Spectral", tagline: "Simple recipe site", 
                            description: "Awesome website for recipes Awesome website for recipes Awesome website for recipes Awesome website for recipes ", 
                            link: "https://spectrall.herokuapp.com", 

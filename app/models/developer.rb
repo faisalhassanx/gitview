@@ -8,6 +8,7 @@ class Developer < ApplicationRecord
   validates :email, presence: true, length: { maximum: 100 }, 
                     format: { with: VALID_EMAIL_REGEX }, 
                     uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { in: 6..15 }
   validates :website, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
   validates :github, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
   
