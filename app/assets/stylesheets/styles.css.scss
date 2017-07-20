@@ -51,7 +51,7 @@ $label-link-hover-color: #ffffff;
 @import "bootstrap";
 
 body {
-  padding-top: 65px;
+  padding-top: 80px;
   background-color: #ffffff;
   color: #181842;
   font-size: 1.5em;
@@ -173,6 +173,16 @@ ul.dropdown-menu, .divider {
   ul.dropdown-menu li.divider {
     background-color: #ffffff !important;
   }
+}
+
+// alert
+.alert {
+  margin-top: -19px;
+  border-radius: 0px;
+}
+
+.errors {
+  list-style: none;
 }
 
 //  Footer credits pill

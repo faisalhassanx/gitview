@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gitview</title>
+    <title>Gitview | Show & Tell for Developers</title>
     <%= csrf_meta_tags %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gitviewl">
+    <meta name="description" content="Gitview | Show & Tell for Developers">
     <meta name="author" content="Faisal Hassan">
 
     <%= favicon_link_tag 'favicon.ico' %>
@@ -19,7 +19,9 @@
     
     <%= render 'layouts/flash' %>
     
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
     
     <%= render 'layouts/footer' %>
      
