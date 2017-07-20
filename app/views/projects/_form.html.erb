@@ -1,0 +1,58 @@
+<%= form_for @project, html: { multipart: true } do |f| %>
+  
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", 
+            placeholder: "Please enter your name"%>
+      </div>
+  </div>
+  
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :tagline %>
+        <%= f.text_field :tagline, class: "form-control", 
+            placeholder: "Describe what you are posting in less than 80 characters" %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :project_link %>
+        <%= f.text_field :link, class: "form-control", 
+            placeholder: "Please enter the URL of the project"%>
+      </div>
+  </div>
+  
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :project_repo %>
+        <%= f.text_field :github, class: "form-control", 
+            placeholder: "Please enter the Github link of the project repository" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", size: "50x10", 
+        placeholder: "Please enter a detailed description of the project in less than 1000 words"%>
+  </div>
+  
+  <div class="form-group"> 
+    <%= f.submit ( f.object.new_record? ? "Post Project" : "Update Project"), class: "btn btn-success" %>
+  </div>
+
+<% end %>  
+  
+<!--<script type="text/javascript">-->
+<!--  $('#project_picture').bind('change', function() {-->
+<!--    size_in_megabytes = this.files[0].size/1024/1024;-->
+<!--    if (size_in_megabytes > 5) {-->
+<!--      alert('Maximum file size is 5MB. Please choose a smaller image file.');-->
+<!--    }-->
+<!--  });-->
+<!--</script>-->

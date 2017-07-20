@@ -38,4 +38,12 @@ class ProjectsTest < ActionDispatch::IntegrationTest
     assert_match @project.description, response.body
     assert_match @developer.name.titleize, response.body
   end
+  
+  test "create new valid projects" do
+    get new_project_path
+  end
+  
+  test "reject invalid project submissions" do
+    get new_project_path
+  end
 end
