@@ -6,7 +6,7 @@
         <%= gravatar_for @project.developer, size: 150 %>
         <p><h4>Developer: <%= link_to @project.developer.name, '#' %></h4></p>
         <h5>
-          <%= link_to "Edit",   '#', class: "btn btn-primary edit-btn" %>
+          <%= link_to "Edit",   edit_project_path(@project), class: "btn btn-primary edit-btn" %>
           <%= link_to "Delete", project_path(@project), method: :delete, 
                                 data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
         </h5>
@@ -17,6 +17,10 @@
         <h3 class="text-center"><%= @project.tagline.titleize %></h3>
         <br />
         <h4><%= simple_format(@project.description) %></h4>
+        <div class="pull-right icon-show">
+          <%= link_to icon('globe'), @project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to icon('code'), @project.github, class: "fa-2x fa-icon", target: '_blank' %>
+        </div>
       </div>
     </div>
   </div>
