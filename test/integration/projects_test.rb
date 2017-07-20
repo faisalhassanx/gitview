@@ -45,5 +45,7 @@ class ProjectsTest < ActionDispatch::IntegrationTest
   
   test "reject invalid project submissions" do
     get new_project_path
-  end
+   
+ end
+ 
 end
