@@ -53,8 +53,7 @@ class DevelopersController < ApplicationController
   end
   
   def developer_params
-    params.require(:developer).permit(:name, :email, :password, :password_confirmation,
-                                      :website, :github)
+    params.require(:developer).permit(:name, :email, :password, :website, :github)
   end
   
 end

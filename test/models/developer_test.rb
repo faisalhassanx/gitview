@@ -49,11 +49,5 @@ class DeveloperTest < ActiveSupport::TestCase
     @developer.save
     assert_not duplicate_developer.valid?
   end
-  
 
-  test "password should be present" do
-    @developer.password = @developer.password_confirmation = " "
-    assert_not @developer.valid?
-  end
-  
 end
