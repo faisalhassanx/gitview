@@ -10,7 +10,7 @@
           <%= link_to "Delete", project_path(@project), method: :delete, 
                                 data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
         </h5>
-        <h5><%= link_to "Return to Projects Index", projects_path, class: "btn btn-success" %></h5>
+        <h5><%= link_to "Back", :back, class: "btn btn-success" %></h5>
 
       </div>
       <div class="col-md-8 well" id="show-well">
