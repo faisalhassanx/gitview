@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h1 class="text-center">Developers Index</h1>
+    <hr />
+    <% @developers.each do |developer| %>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <section class="chef-info text-center">
+            <%= gravatar_for developer, size: 240 %>
+            <h3><strong><%= link_to developer.name, developer %></strong></h3>
+          </section>
+        </div>
+      </div>
+      <hr />
+    <% end %>
+    
+  </div>
+</div>
