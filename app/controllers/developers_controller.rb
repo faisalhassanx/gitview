@@ -2,11 +2,11 @@ class DevelopersController < ApplicationController
   before_action :set_developer, only: [:show, :edit, :update, :destroy]
   
   def index
-    @developers = Developer.all
+    @developers = Developer.paginate(page: params[:page], per_page: 5)
   end
   
   def show
-    @projects = @developer.projects.all
+   @projects = @developer.projects.paginate(page: params[:page], per_page: 5)
   end
   
   def new

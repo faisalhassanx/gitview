@@ -9,4 +9,6 @@ class Project < ApplicationRecord
   validates :developer_id, presence: true
   
   belongs_to :developer
+  
+  default_scope -> { order(updated_at: :desc) }
 end
