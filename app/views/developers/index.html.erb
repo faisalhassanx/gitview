@@ -7,7 +7,8 @@
         <div class="col-md-8 col-md-offset-2">
           <section class="chef-info text-center">
             <%= gravatar_for developer, size: 240 %>
-            <h3><strong><%= link_to developer.name, developer %></strong></h3>
+            <h3><strong><%= link_to developer.name, developer, class: "dev-name" %></strong></h3>
+            <small><%= pluralize(developer.projects.count, "project") if developer.projects %></small>
           </section>
         </div>
       </div>
