@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
   end
   
   def create
-    developer = Developer.find_by(email: params[:session][:email])
-    if developer && developer.authenticate(params[:session][:password])
+    developer = Developer.find_by(email: params[:email])
+    if developer && developer.authenticate(params[:password])
       session[:developer_id] = developer.id
       flash[:success] = "You have logged in successfully"
       redirect_to projects_path
