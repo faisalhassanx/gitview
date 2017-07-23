@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170723232936) do
+ActiveRecord::Schema.define(version: 20170723234721) do
 
   create_table "developers", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170723232936) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.boolean "admin", default: false
+  end
+
+  create_table "project_technologies", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "technology_id"
+  end
+
+  create_table "project_types", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "type_id"
   end
 
   create_table "projects", force: :cascade do |t|
