@@ -1,11 +1,9 @@
 <div class="row">
-  <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+  <div class="col-md-10 col-md-offset-1">
     <h1 class="text-center"><%= @developer.name.titleize %></h1>
-    <hr />
-      <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3">
-          <section class="developer-info text-center">
-            <%= gravatar_for @developer, size: 160 %><br />
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center">
+        <%= gravatar_for @developer, size: 160 %><br />
             <h5 class="text-center">
               <%= link_to icon('globe'), @developer.website, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
               <%= link_to icon('github'), @developer.github, class: "fa-2x fa-icon", target: '_blank' %>
@@ -17,13 +15,17 @@
               <%= link_to "Delete", developer_path(@developer), method: :delete, 
                                 data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
             <% end %>
-          </section>
-        </div>
-        
-        <% @projects.each do |project| %>
-        <div class="project-info col-lg-9 col-md-9 col-sm-9 well" id="index-well">
-          <div class="row">
-            <div class="col-md-7">
+        </h5>
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+  
+  <% @projects.each do |project| %>
+      <div class="col-md-8 col-md-offset-2 well">
+        <div class="row">
+          <div class="col-md-7">
               <h2>About:</h2>
                    <p>lorem ipsum</p>
               <h2>
@@ -37,16 +39,14 @@
                 <%= link_to icon('code'), project.github, class: "fa-2x fa-icon", target: '_blank' %>
               </div>
             </div>
-          </div>
-          <p>
-            <span class="quiet">
-              <small>Posted: <%= time_ago_in_words(project.created_at) %> ago</small> ||
-              <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small>
-            </span>
         </div>
+        <span class="quiet">
+          <small>Posted: <%= time_ago_in_words(project.created_at) %> ago</small> ||
+          <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small>
+        </span>
       </div>
-      <hr />
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
