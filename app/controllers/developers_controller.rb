@@ -42,13 +42,15 @@ class DevelopersController < ApplicationController
   end
   
   def destroy
-    @developer.destroy
-    flash[:danger] = "Account has been deleted"
-    if current_user.admin?
-      redirect_to chefs_path
-    else
-      session[:developer_id] = nil
-      redirect_to root_path
+    if !@developer.admin?
+      @developer.destroy
+      flash[:danger] = "Account has been deleted"
+      if current_user.admin?
+        redirect_to developers_path
+      else
+        session[:developer_id] = nil
+        redirect_to root_path
+      end
     end
   end
   
