@@ -1,5 +1,8 @@
 class DevelopersController < ApplicationController
   before_action :set_developer, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:edit, :update, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+  
   
   def index
     @developers = Developer.paginate(page: params[:page], per_page: 5)
@@ -54,6 +57,13 @@ class DevelopersController < ApplicationController
   
   def developer_params
     params.require(:developer).permit(:name, :email, :password, :website, :github)
+  end
+  
+  def require_same_user
+    if current_user != @developer
+      flash[:danger] = "You can only edit your own profile"
+      redirect_to projects_path
+    end
   end
   
 end

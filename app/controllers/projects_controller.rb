@@ -1,5 +1,8 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:edit, :update, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+
   
   def index
     @projects = Project.paginate(page: params[:page], per_page: 5)
@@ -52,6 +55,13 @@ class ProjectsController < ApplicationController
   
   def project_params
     params.require(:project).permit(:name, :tagline, :description, :link, :github)
+  end
+  
+  def require_same_user
+    if current_user != @project.developer
+      flash[:danger] = "You can only edit your own projects"
+      redirect_to projects_path
+    end
   end
   
   
