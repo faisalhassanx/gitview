@@ -33,8 +33,10 @@
           <% end %>
           <ul class="dropdown-menu">
             <li></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Add Technology', '#' %></li>
+            <% if logged_in? && current_user.admin? %>
+              <li class="divider"></li>
+              <li><%= link_to 'Add Technology', '#' %></li>
+            <% end %>
           </ul>
         </li>
         <li class="dropdown">
@@ -44,8 +46,10 @@
           <% end %>
           <ul class="dropdown-menu">
             <li></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Add Type', '#' %></li>
+            <% if logged_in? && current_user.admin? %>
+              <li class="divider"></li>
+              <li><%= link_to 'Add Type', '#' %></li>
+            <% end %>
           </ul>
         </li>
         <% if logged_in? %>

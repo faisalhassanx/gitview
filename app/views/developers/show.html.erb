@@ -10,6 +10,11 @@
               <%= link_to icon('globe'), @developer.website, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
               <%= link_to icon('github'), @developer.github, class: "fa-2x fa-icon", target: '_blank' %>
             </h5>
+            <% if logged_in? && (@developer == current_user || current_user.admin?) %>
+              <%= link_to "Edit", edit_developer_path(@developer), class: "btn btn-primary edit-btn" %>
+              <%= link_to "Delete", developer_path(@developer), method: :delete, 
+                                data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            <% end %>
           </section>
         </div>
         
