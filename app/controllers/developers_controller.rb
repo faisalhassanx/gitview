@@ -44,8 +44,12 @@ class DevelopersController < ApplicationController
   def destroy
     @developer.destroy
     flash[:danger] = "Account has been deleted"
-    session[:chef_id] = nil
-    redirect_to root_path
+    if current_user.admin?
+      redirect_to chefs_path
+    else
+      session[:developer_id] = nil
+      redirect_to root_path
+    end
   end
   
   
@@ -60,7 +64,7 @@ class DevelopersController < ApplicationController
   end
   
   def require_same_user
-    if current_user != @developer
+    if current_user != @developer and !current_user.admin?
       flash[:danger] = "You can only edit your own profile"
       redirect_to projects_path
     end
