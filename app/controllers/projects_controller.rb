@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
   
   def create
     @project = Project.new(project_params)
+    @project.developer = current_user
     if @project.save
       flash[:success] = "Project was posted successfully"
       redirect_to project_path(@project)
