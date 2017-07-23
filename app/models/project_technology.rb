@@ -1,0 +1,3 @@
+class ProjectTechnology < ApplicationRecord
+  
+end
