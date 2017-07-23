@@ -19,23 +19,27 @@
         placeholder: "Please enter a password" %>
   </div>
   
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= f.label :website %>
-        <%= f.text_field :website, class: "form-control", 
-            placeholder: "Please enter your personal URL" %>
+  <% unless controller_name == "developers" && action_name == "new" %>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :website %>
+          <%= f.text_field :website, class: "form-control", 
+              placeholder: "Please enter your personal URL" %>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :github %>
+          <%= f.text_field :github, class: "form-control", 
+              placeholder: "Please enter your Github URL" %>
+        </div>
       </div>
     </div>
     
-    <div class="col-md-6">
-      <div class="form-group">
-        <%= f.label :github %>
-        <%= f.text_field :github, class: "form-control", 
-            placeholder: "Please enter your Github URL" %>
-      </div>
-    </div>
-  </div>
+  <% end %>
 
   <div class="form-group"> 
     <%= f.submit ( f.object.new_record? ? "Register" : "Update Account"), class: "btn btn-success" %>
