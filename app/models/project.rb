@@ -9,6 +9,10 @@ class Project < ApplicationRecord
   validates :developer_id, presence: true
   
   belongs_to :developer
+  has_many :project_types
+  has_many :types, through: :project_types, dependent: :destroy
+  has_many :project_technologies
+  has_many :technologies, through: :project_technologies, dependent: :destroy
   
   default_scope -> { order(updated_at: :desc) }
 end
