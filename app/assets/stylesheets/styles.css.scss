@@ -299,6 +299,17 @@ a#by-tab:hover {
   border-color: #181842;
 }
 
+// Labels
+
+#type-label, #technology-label {
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+// Input checkbox
+.input-checkbox input {
+  width: auto !important;
+}
 
 
 

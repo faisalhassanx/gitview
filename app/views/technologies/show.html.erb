@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-    <h1 class="text-center">projects with <%= @technology.name.capitalize %></h1>
+    <h1 class="text-center"><%= @technology.name.capitalize %> Projects</h1>
     <hr />
     <% @technology.projects.each do |project| %>
       <div class="row">
@@ -16,8 +16,8 @@
             <div class="col-md-7">
               <h2><%= link_to project.name.titleize, project %></h2>
               <h4><strong><%= project.tagline %></strong></h4>
-              <h4><strong>Type</strong>: <%= render project.types %></h4>
-              <h4><strong>Technology(s)</strong>: <%= render project.technologies %></h4>
+              <h4><strong>Type</strong>: <%= render project.types %></h4><br />
+              <h4><strong>Tech</strong>: <%= render project.technologies %></h4>
             </div>
             </div>
           </div>
