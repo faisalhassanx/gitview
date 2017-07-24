@@ -32,10 +32,10 @@
             Technology <b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu">
-            <li></li>
+            <li><%= link_to technology.name.capitalize, technology(technology) %></li>
             <% if logged_in? && current_user.admin? %>
               <li class="divider"></li>
-              <li><%= link_to 'Add Technology', '#' %></li>
+              <li><%= link_to 'Add Technology', new_technology_path %></li>
             <% end %>
           </ul>
         </li>
@@ -45,10 +45,10 @@
             Type <b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu">
-            <li></li>
+            <li><%= link_to type.name.capitalize, type(type) %></li>
             <% if logged_in? && current_user.admin? %>
               <li class="divider"></li>
-              <li><%= link_to 'Add Type', '#' %></li>
+              <li><%= link_to 'Add Type', new_type_path %></li>
             <% end %>
           </ul>
         </li>
