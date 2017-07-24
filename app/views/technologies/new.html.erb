@@ -1,0 +1,23 @@
+<%= render 'shared/errors', object: @technology %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h1 class="text-center">Create a Project Technology</h1>
+    <hr />
+    <div class="well">
+      <%= form_for @technology do |f| %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group"> 
+          <%= f.submit "Create Technology", class: "btn btn-success" %>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>
