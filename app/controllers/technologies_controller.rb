@@ -5,8 +5,7 @@ class TechnologiesController < ApplicationController
   
   def show
     @technology = Technology.find(params[:id])
-    @projects = @technology.recipes.paginate(page: params[:page], per_page: 5)
-  end
+    @projects = @technology.projects.paginate(page: params[:page], per_page: 5)
   end
   
   def new
