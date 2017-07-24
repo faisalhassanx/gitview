@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :types, only: [:new, :create, :show]
+ 
+ resources :technologies, only: [:new, :create, :show]
+  
   get '/register', to: 'developers#new'
   get   '/login',    to: "sessions#new"
   post  '/login',    to: "sessions#create"
