@@ -41,6 +41,22 @@
     <%= f.text_area :description, class: "form-control", size: "50x10", 
         placeholder: "Please enter a detailed description of the project in less than 1000 words"%>
   </div>
+  
+  <div class="form-group">
+    <%= f.label :types %>&nbsp;&nbsp;
+    <%= f.collection_check_boxes :type_ids, Type.all, :id, :name do |cb| %>
+      <% cb.label(class: "checkbox-inline input-checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %>
+    <br />
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :technologies %>&nbsp;&nbsp;
+    <%= f.collection_check_boxes :technology_ids, Technology.all, :id, :name do |cb| %>
+      <% cb.label(class: "checkbox-inline input-checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+    <% end %>
+    <br />
+  </div>
   <br />
   
   <div class="form-group"> 
