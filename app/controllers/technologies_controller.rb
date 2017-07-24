@@ -9,11 +9,18 @@ class TechnologiesController < ApplicationController
   end
   
   def new
-    
+    @technology = Technology.new
   end
   
   def create
-    
+    @technology = Technology.new(technology_params)
+    if @technology.save
+      flash[:success] = "Technology has been saved successfully"
+      redirect_to projects_path
+    else
+      flash[:danger] = "Please try again"
+      render 'new'
+    end
   end
   
   def edit
@@ -31,5 +38,8 @@ class TechnologiesController < ApplicationController
   
   private
   
+  def technology_params
+    params.require(:technology).permit(:name)
+  end
   
 end
