@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+    <h1 class="text-center"><%= @type.name %> Projects</h1>
+    <hr />
+    <% @type.projects.each do |project| %>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+          <section class="developer-info text-center">
+            <%= gravatar_for project.developer, size: 160 %>
+            <h4><strong>Developer: <%= project.developer.name %></strong></h4>
+          </section>
+        </div>
+        
+        <div class="project-info col-lg-9 col-md-9 col-sm-9 well">
+          <div class="row">
+            <div class="col-md-7">
+              <h2><%= link_to project.name.titleize, project %></h2>
+              <h4><strong><%= project.tagline %></strong></h4>
+              <h4><strong>Type:&nbsp;</strong>: <%= render project.types %></h4>
+              <h4><strong>Tech:&nbsp;</strong>: <%= render project.technologies %></h4>
+            </div>
+            </div>
+          </div>
+          <p>
+            <span class="quiet">
+              <small>Created: <%= time_ago_in_words(project.created_at) %> ago</small> ||
+              <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small>
+            </span>
+          </p>
+        </div>
+      </div>
+      <hr />
+    <% end %>
+    
+  </div>
+</div>
+
+<div class="text-center">
+  <strong><%= will_paginate @projects %></strong>
+</div>

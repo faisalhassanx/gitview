@@ -32,7 +32,9 @@
             Technology <b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu">
-            <li><%= link_to technology.name.capitalize, technology(technology) %></li>
+            <% Technology.all.each do |technology| %>
+              <li><%= link_to technology.name, technology_path(technology) %></li>
+            <% end %>
             <% if logged_in? && current_user.admin? %>
               <li class="divider"></li>
               <li><%= link_to 'Add Technology', new_technology_path %></li>
@@ -45,7 +47,9 @@
             Type <b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu">
-            <li><%= link_to type.name.capitalize, type(type) %></li>
+            <% Type.all.each do |type| %>
+              <li><%= link_to type.name, type_path(type) %></li>
+            <% end %>
             <% if logged_in? && current_user.admin? %>
               <li class="divider"></li>
               <li><%= link_to 'Add Type', new_type_path %></li>
