@@ -49,9 +49,14 @@ class TypesController < ApplicationController
   end
   
   def require_admin
-    if logged_in? && !current_user.admin?
-      flash[:danger] = "Admin privileges required"
-      redirect_to root_path
+    if !logged_in? || (logged_in? and !current_user.admin?)
+      if !logged_in?
+        flash[:danger] = "Please log in or sign up"
+        redirect_to login_path
+      else
+        flash[:danger] = "Admin privileges required"
+        redirect_to root_path
+      end
     end
   end
   
