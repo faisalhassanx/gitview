@@ -14,10 +14,14 @@
         <div class="project-info col-lg-9 col-md-9 col-sm-9 well" id="index-well">
           <div class="row">
             <div class="col-md-7">
-              <h2>
-                <%= link_to project.name.titleize, project %>
-                </h2>
+              <h2><%= link_to project.name.titleize, project %></h2>
               <h4><strong><%= project.tagline.titleize %></strong></h4>
+              <% if project.types.any? %>
+                <p><strong>Type</strong>: <%= render project.types %></p>
+              <% end %>
+              <% if project.technologies.any? %>
+                <p><strong>Tech</strong>: <%= render project.technologies %></p>
+              <% end %>
             </div>
             <div class="col-md-5  hidden-xs">
               <div class="pull-right icon-index">

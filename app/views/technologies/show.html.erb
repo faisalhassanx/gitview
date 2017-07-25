@@ -16,8 +16,12 @@
             <div class="col-md-9">
               <h2><%= link_to project.name.titleize, project %></h2>
               <h4><strong><%= project.tagline %></strong></h4>
-              <p><strong>Type</strong>: <%= render project.types %></p>
-              <p><strong>Tech</strong>: <%= render project.technologies %></p>
+              <% if project.types.any? %>
+                <p><strong>Type</strong>: <%= render project.types %></p>
+              <% end %>
+              <% if project.technologies.any? %>
+                <p><strong>Tech</strong>: <%= render project.technologies %></p>
+              <% end %>
             </div>
           </div>
           <br />
