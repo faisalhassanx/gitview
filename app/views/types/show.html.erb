@@ -5,22 +5,22 @@
     <% @type.projects.each do |project| %>
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3">
-          <section class="developer-info text-center">
+          <section class="chef-info text-center">
             <%= gravatar_for project.developer, size: 160 %>
             <h4><strong>Developer: <%= project.developer.name %></strong></h4>
           </section>
         </div>
         
-        <div class="project-info col-lg-9 col-md-9 col-sm-9 well">
+        <div class="recipe-info col-lg-9 col-md-9 col-sm-9 well">
           <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-9">
               <h2><%= link_to project.name.titleize, project %></h2>
               <h4><strong><%= project.tagline %></strong></h4>
-              <h4><strong>Type:&nbsp;</strong>: <%= render project.types %></h4><br />
-              <h4><strong>Tech:&nbsp;</strong>: <%= render project.technologies %></h4>
-            </div>
+              <p><strong>Type</strong>: <%= render project.types %></p>
+              <p><strong>Tech</strong>: <%= render project.technologies %></p>
             </div>
           </div>
+          <br />
           <p>
             <span class="quiet">
               <small>Created: <%= time_ago_in_words(project.created_at) %> ago</small> ||
