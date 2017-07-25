@@ -18,6 +18,13 @@
       <div class="col-md-8 well" id="show-well">
         <h3 class="text-center"><%= @project.tagline.titleize %></h3>
         <br />
+         <% if @project.types.any? %>
+          <p><strong>Type</strong>: <%= render @project.types %></p>
+        <% end %>
+        <% if @project.technologies.any? %>
+          <p><strong>Tech</strong>: <%= render @project.technologies %></p>
+        <% end %>
+        <br />
         <h4><%= simple_format(@project.description) %></h4>
         <div class="pull-right icon-show">
           <%= link_to icon('globe'), @project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
