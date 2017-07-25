@@ -43,9 +43,9 @@
   </div>
   
   <div class="form-group">
-    <%= f.label :types %>&nbsp;&nbsp;
-    <%= f.collection_check_boxes :type_ids, Type.all, :id, :name do |cb| %>
-      <% cb.label(class: "checkbox-inline input-checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+    <%= f.label :type %>&nbsp;&nbsp;
+    <%= f.collection_radio_buttons(:type_ids, Type.all, :id, :name) do |b| %>
+      <% b.label(class: "radio-inline input-radio") {b.radio_button(class: "radio") + b.text} %>
     <% end %>
     <br />
   </div>
