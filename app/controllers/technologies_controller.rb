@@ -1,10 +1,11 @@
 class TechnologiesController < ApplicationController
+  before_action :set_technology, only: [:show]
+  before_action :require_admin, only: [:new, :create]
   
   def index
   end
   
   def show
-    @technology = Technology.find(params[:id])
     @projects = @technology.projects.paginate(page: params[:page], per_page: 5)
   end
   
@@ -38,8 +39,19 @@ class TechnologiesController < ApplicationController
   
   private
   
+  def set_technology
+    @technology = Technology.find(params[:id])
+  end
+  
   def technology_params
     params.require(:technology).permit(:name)
+  end
+  
+  def require_admin
+    if logged_in? && !current_user.admin?
+      flash[:danger] = "Admin privileges required"
+      redirect_to root_path
+    end
   end
   
 end

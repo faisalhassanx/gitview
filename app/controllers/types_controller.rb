@@ -1,4 +1,6 @@
 class TypesController < ApplicationController
+  before_action :set_type, only: [:show]
+  before_action :require_admin, only: [:new, :create]
   
   def index
   end
@@ -38,8 +40,19 @@ class TypesController < ApplicationController
   
   private
   
+  def set_type
+    @type = Type.find(params[:id])
+  end
+  
   def type_params
     params.require(:type).permit(:name)
+  end
+  
+  def require_admin
+    if logged_in? && !current_user.admin?
+      flash[:danger] = "Admin privileges required"
+      redirect_to root_path
+    end
   end
   
 end
