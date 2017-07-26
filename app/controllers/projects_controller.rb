@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
   end
   
   def show
+    @comments = @project.comments.paginate(page: params[:page], per_page: 5)
   end
   
   def new
