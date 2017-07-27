@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <h1 class="text-center"><%= @project.name.titleize %></h1>
+    <div class="col-md-9 col-md-offset-3">
+      <h1 class="text-center"><%= @project.name.titleize %></h1>
+    </div>
+    
     <div class="row">
       <div class="col-md-3 text-center">
         <%= gravatar_for @project.developer, size: 150 %>
@@ -13,12 +16,11 @@
           <% end %>
         </h5>
         <h5><%= link_to "Back", :back, class: "btn btn-success" %></h5>
-
       </div>
-      <div class="col-md-8 well" id="show-well">
-        <h3 class="text-center"><%= @project.tagline.titleize %></h3>
-        <br />
-         <% if @project.types.any? %>
+      
+      <div class="col-md-9 well" id="show-well">
+        <h3 class="text-center"><%= @project.tagline.titleize %></h3><br />
+        <% if @project.types.any? %>
           <p><strong>Type</strong>: <%= render @project.types %></p>
         <% end %>
         <% if @project.technologies.any? %>
@@ -37,7 +39,7 @@
 
 <% if @project.comments != 0 %>
   <div class="row comments">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-7 col-md-offset-4">
       <h3 class="text-center">Comments</h3><br />
       <div id="comments">
         <%= render partial: 'comments/comments', object: @comments %>
