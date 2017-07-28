@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   
   resources :developers, except: [:new]
   
-  resources :projects
+  resources :projects do
+    resources :comments, only: [:create]
+  end
 
   root "pages#home"
 
