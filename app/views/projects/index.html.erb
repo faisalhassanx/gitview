@@ -34,8 +34,10 @@
           <p>
             <span class="quiet">
               <small>Posted: <%= time_ago_in_words(project.created_at) %> ago</small> ||
-              <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small>
+              <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small> ||
+              <small><%= pluralize(project.comments.count, 'Comment') %></small>
             </span>
+          </p>
         </div>
       </div>
       <hr />

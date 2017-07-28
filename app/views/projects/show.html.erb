@@ -32,6 +32,13 @@
           <%= link_to icon('globe'), @project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
           <%= link_to icon('code'), @project.github, class: "fa-2x fa-icon", target: '_blank' %>
         </div>
+        <br />
+        <p>
+          <span class="quiet">
+            <small>Posted: <%= time_ago_in_words(@project.created_at) %> ago</small> ||
+            <small>Updated: <%= time_ago_in_words(@project.updated_at) %> ago</small>
+          </span>
+        </p>
       </div>
     </div>
   </div>
