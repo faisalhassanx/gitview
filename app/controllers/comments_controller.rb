@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       redirect_to project_path(@project)
     else
       flash[:danger] = "Please try again"
-      redirect_to :back
+      redirect_back fallback_location: root_path
     end
   end
   
