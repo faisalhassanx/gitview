@@ -7,8 +7,9 @@ class CommentsController < ApplicationController
     @comment = @project.comments.build(comment_params)
     @comment.developer = current_user
     if @comment.save
-      flash[:success] = "Comment has been successfully created."
-      redirect_to project_path(@project)
+      ActionCable.server.broadcast "comments", render(partial: 'comments/comment', object: @comment )
+      # flash[:success] = "Comment has been successfully created."
+      # redirect_to project_path(@project)
     else
       flash[:danger] = "Please try again"
       redirect_back fallback_location: root_path

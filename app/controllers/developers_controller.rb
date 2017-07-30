@@ -21,6 +21,7 @@ class DevelopersController < ApplicationController
     if @developer.save
       flash[:success] = "Registration is successful"
       session[:developer_id] = @developer.id
+      cookies.signed[:developer_id] = @developer.id
       redirect_to projects_path
     else
       flash[:danger] = "Please correct the following errors and try again"
