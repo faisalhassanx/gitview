@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV["REDIS_URL"] %>
+  url: redis://h:p3de01f70dce410fc0dfc46d95cb1b2b5d5ee3edc633505c53f295980c5d2fa83@ec2-52-202-15-207.compute-1.amazonaws.com:28529
   channel_prefix: gitview_production
