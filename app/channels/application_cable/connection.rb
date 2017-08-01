@@ -4,7 +4,7 @@ module ApplicationCable
     identified_by :current_user
     
     def connect
-      self.current_user = find_current_user
+      self.current_user = find_verified_user
     end
     
     def disconnect
@@ -13,7 +13,7 @@ module ApplicationCable
     
     protected
     
-    def find_current_user
+    def find_verified_user
       if current_user = Developer.find_by(id: cookies.signed[:developer_id])
         current_user
       else
