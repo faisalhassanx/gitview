@@ -69,6 +69,7 @@
 <% if @project.comments != 0 %>
   <div class="row comments">
     <div class="col-md-7 col-md-offset-4">
+      <h3 class="text-center">Comments</h3><br />
       <div id="messages">
         <%= render partial: 'comments/comments', object: @comments %>
       </div>
