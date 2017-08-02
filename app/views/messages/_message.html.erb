@@ -1,0 +1,10 @@
+<div class="message">
+  <h4>
+    <%= gravatar_for(message.developer, size: 40) %>
+    <strong><%= link_to message.developer.name.titleize, message.developer, class: "dev-name-msg" %></strong>
+    <span class="content">
+      <%= message.content %>
+    </span>&nbsp;
+    <small>[<%= time_ago_in_words(message.created_at) %> ago]</small>
+  </h4>
+</div>
