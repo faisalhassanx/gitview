@@ -14,6 +14,7 @@ class Developer < ApplicationRecord
   
   has_many :projects, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :messages, dependent: :destroy
   
   has_secure_password
   
