@@ -23,13 +23,13 @@
         <% end %>
         
         <% unless controller_name == "developers" && action_name == "index" %>
-          <li><%= link_to 'Developers', developers_path %></li>
+          <li><%= link_to 'Devs', developers_path %></li>
         <% end %>
         
         <li class="dropdown">
           <%= link_to '#', class: "dropdown-toggle", 
                       "data-toggle" => "dropdown" do %>
-            Technology <b class="caret"></b>
+            Tech <b class="caret"></b>
           <% end %>
           <ul class="dropdown-menu">
             <% Technology.all.each do |technology| %>
@@ -57,6 +57,7 @@
           </ul>
         </li>
         <% if logged_in? %>
+          <li><%= link_to 'GitChat', gitchat_path %></li>
           <li><%= link_to 'New Project', new_project_path %></li>
         <% end %>
       </ul>
