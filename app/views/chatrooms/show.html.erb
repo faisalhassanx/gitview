@@ -10,11 +10,10 @@
     <%= form_for(@message, :html => {class: "form-horizontal", role: "form"}) do |f| %>
     
       <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-8 col-md-offset-2">
           <div class="form-group">
             <%= f.text_area :content, class: "form-control" %>
-          </div>
-          <div class="form-group">
+
             <%= f.submit "Send", class: "btn btn-primary" %>
           </div>
         </div>

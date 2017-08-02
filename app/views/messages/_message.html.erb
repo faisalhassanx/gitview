@@ -1,14 +1,13 @@
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-8 col-md-offset-2">
     <div class="message">
-      <h4>
-        <%= gravatar_for(message.developer, size: 40) %>
-        <strong><%= link_to message.developer.name.titleize, message.developer, class: "dev-name-msg" %></strong>
-        <span class="content">
+        
+        <h4><strong><%= gravatar_for(message.developer, size: 40) %>&nbsp;<%= link_to message.developer.name.titleize, message.developer, class: "dev-name-msg" %></strong></h4>
+        <p><span class="content">
           <%= message.content %>
-        </span>&nbsp;
-        <small>[<%= time_ago_in_words(message.created_at) %> ago]</small>
-      </h4>
+          <small>[<%= time_ago_in_words(message.created_at) %> ago]</small>
+        </span></p>&nbsp;
+        
     </div>
   </div>
 </div>
