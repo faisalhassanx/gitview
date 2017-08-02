@@ -8,6 +8,6 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
   received: (data) ->
     $('#messages').append data['message']
     $('#message_content').val ''
-    scrollToBottom()
+    scrollToBottom();
     return
     # Called when there's incoming data on the websocket for this channel
