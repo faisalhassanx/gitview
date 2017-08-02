@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'gitchat', to: 'chatrooms#show'
+  
   mount ActionCable.server => '/cable'
 
   resources :types, only: [:new, :create, :show]
