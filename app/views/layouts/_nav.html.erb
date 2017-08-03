@@ -18,14 +18,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <% unless controller_name == "projects" && action_name == "index" %>
-          <li><%= link_to 'Projects', projects_path %></li>
-        <% end %>
-        
-        <% unless controller_name == "developers" && action_name == "index" %>
-          <li><%= link_to 'Devs', developers_path %></li>
-        <% end %>
-        
+        <li><%= link_to 'Projects', projects_path %></li>
+        <li><%= link_to 'Devs', developers_path %></li>
+
         <li class="dropdown">
           <%= link_to '#', class: "dropdown-toggle", 
                       "data-toggle" => "dropdown" do %>
@@ -41,6 +36,7 @@
             <% end %>
           </ul>
         </li>
+        
         <li class="dropdown">
           <%= link_to '#', class: "dropdown-toggle", 
                       "data-toggle" => "dropdown" do %>
@@ -61,12 +57,12 @@
           <li><%= link_to 'New Project', new_project_path %></li>
         <% end %>
       </ul>
-      <% if controller_name == "sessions" && action_name == "new" %>
-        <ul class="nav navbar-nav navbar-right">
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'About', about_path %></li>
+        <% if controller_name == "sessions" && action_name == "new" %>
           <li><%= link_to 'Sign Up', register_path %></li>
-        </ul>
-      <% else %>
-        <ul class="nav navbar-nav navbar-right">
+        <% else %>
           <% if logged_in? %>
             <li class="dropdown">
               <%= link_to '#', class: "dropdown-toggle user", 
