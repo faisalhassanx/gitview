@@ -8,6 +8,7 @@ class Project < ApplicationRecord
   validates :link, presence: true, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
   validates :github, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }
   validates :developer_id, presence: true
+  validate :picture_size
   
   belongs_to :developer
   has_many :project_types
@@ -18,5 +19,13 @@ class Project < ApplicationRecord
   default_scope -> { order(updated_at: :desc) }
   
   mount_uploader :picture, PictureUploader
+  
+  private
+  
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add(:picture, "Should be less than 5MB")
+    end
+  end
   
 end
