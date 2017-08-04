@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  
   VALID_URL_REGEX = /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i
   
   validates :name,    presence: true, length: { maximum: 35 }
@@ -15,4 +16,7 @@ class Project < ApplicationRecord
   has_many :technologies, through: :project_technologies, dependent: :destroy
   has_many :comments, dependent: :destroy
   default_scope -> { order(updated_at: :desc) }
+  
+  mount_uploader :picture, PictureUploader
+  
 end
