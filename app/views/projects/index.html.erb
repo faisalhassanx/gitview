@@ -4,14 +4,14 @@
     <hr />
     <% @projects.each do |project| %>
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="col-lg-2 col-md-2 col-sm-2">
           <section class="developer-info text-center">
-            <%= gravatar_for project.developer, size: 160 %>
+            <%= gravatar_for project.developer, size: 140 %>
             <h4><strong>Developer: <%= project.developer.name %></strong></h4>
           </section>
         </div>
         
-        <div class="project-info col-lg-9 col-md-9 col-sm-9 well" id="index-well">
+        <div class="project-info col-lg-10 col-md-10 col-sm-10 well" id="index-well">
           <div class="row">
             <div class="col-md-7">
               <h2><%= link_to project.name.titleize, project %></h2>
@@ -24,7 +24,11 @@
               <% end %>
             </div>
             <div class="col-md-5  hidden-xs">
+              
               <div class="pull-right icon-index">
+                <%= image_tag(project.picture.url, 
+                              size: "350x200",   
+                              class: "index-img gravatar") if project.picture? %>
                 <%= link_to icon('globe'), project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
                 <%= link_to icon('code'), project.github, class: "fa-2x fa-icon", target: '_blank' %>
               </div>

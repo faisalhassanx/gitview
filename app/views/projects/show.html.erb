@@ -20,6 +20,9 @@
       
       <div class="col-md-9 well" id="show-well">
         <h3 class="text-center"><%= @project.tagline.titleize %></h3><br />
+        <%= image_tag(@project.picture.url, size: "650x350", 
+              class: "show-img img-responsive center-block gravatar") if @project.picture? %>
+        <br />
         <% if @project.types.any? %>
           <p><strong>Type</strong>: <%= render @project.types %></p>
         <% end %>
