@@ -11,11 +11,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'font-awesome-sass', '~> 4.7.0'
-# Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.1.1'
 gem 'bootstrap-will_paginate'
 gem 'hirb', '~> 0.7.3'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 
 group :development, :test do
