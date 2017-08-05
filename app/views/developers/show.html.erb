@@ -23,23 +23,31 @@
   </div>
   
   <% @projects.each do |project| %>
-      <div class="col-md-8 col-md-offset-2 well">
+      <div class="col-md-8 col-md-offset-2 well index-well">
         <div class="row">
           <div class="col-md-7">
-              <h2>About:</h2>
-                   <p>lorem ipsum</p>
-              <h2>
-                <%= link_to project.name.titleize, project %>
-                </h2>
-              <h4><strong><%= project.tagline.titleize %></strong></h4>
-            </div>
+            <h2>
+              <%= link_to project.name.titleize, project %>&nbsp; || &nbsp;
+              <%= link_to icon('globe'), project.link, class: "fa fa-icon", target: '_blank' %>&nbsp;
+              <%= link_to icon('code'), project.github, class: "fa fa-icon", target: '_blank' %>
+            </h2>
+            <h4><strong><%= project.tagline.titleize %></strong></h4>
+              <% if project.types.any? %>
+                <p><strong>Type</strong>: <%= render project.types %></p>
+              <% end %><br />
+              <% if project.technologies.any? %>
+                <p><strong>Tech</strong>: <%= render project.technologies %></p>
+              <% end %>
+          </div>
             <div class="col-md-5  hidden-xs">
-              <div class="pull-right icon-index">
-                <%= link_to icon('globe'), project.link, class: "fa-2x fa-icon", target: '_blank' %>&nbsp;&nbsp;&nbsp;&nbsp;
-                <%= link_to icon('code'), project.github, class: "fa-2x fa-icon", target: '_blank' %>
+              <div class="pull-right">
+                <%= image_tag(project.picture.url, 
+                              size: "300x150",   
+                              class: "index-img gravatar") if project.picture? %>
               </div>
             </div>
         </div>
+        <br />
         <span class="quiet">
           <small>Posted: <%= time_ago_in_words(project.created_at) %> ago</small> ||
           <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small>

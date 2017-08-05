@@ -271,13 +271,13 @@ a#by-tab:hover {
 
 // Index
 
-#index-well {
+.index-well {
   min-height: 189px;
   padding: 15px;
 }
 
-.icon-index {
-  padding-top: 10px;
+.well {
+  padding-top: 5px;
 }
 
 .icon-show {
@@ -289,7 +289,7 @@ a#by-tab:hover {
 }
 
 img.index-img.gravatar {
-  margin-top: 5px;
+  margin-top: 15px;
   margin-bottom: -70px;
 }
 
