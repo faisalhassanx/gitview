@@ -21,6 +21,14 @@ class Project < ApplicationRecord
   
   mount_uploader :picture, PictureUploader
   
+  def hearts_total
+    self.hearts.where(heart: true).size
+  end
+  
+  def unhearts_total
+    self.hearts.where(heart: false).size
+  end
+  
   private
   
   def picture_size
