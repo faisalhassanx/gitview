@@ -36,6 +36,16 @@
           </div>
           <br />
           <p>
+            <%= link_to heart_project_path(project, heart: true), method: :post, class: "btn btn-default btn-sm" do %>
+              <i class="glyphicon glyphicon-heart"></i> &nbsp;
+              <strong><%= project.hearts_total %></strong>
+            <% end %>
+            <%= link_to heart_project_path(project, heart: false), method: :post, class: "btn btn-default btn-sm" do %>
+              <i class="glyphicon glyphicon-heart-empty"></i> &nbsp;
+              <strong><%= project.unhearts_total %></strong>
+            <% end %>
+          </p>
+          <p>
             <span class="quiet">
               <small>Posted: <%= time_ago_in_words(project.created_at) %> ago</small> ||
               <small>Updated: <%= time_ago_in_words(project.updated_at) %> ago</small> ||
