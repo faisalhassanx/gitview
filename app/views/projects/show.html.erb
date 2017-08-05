@@ -42,6 +42,16 @@
             <small>Updated: <%= time_ago_in_words(@project.updated_at) %> ago</small>
           </span>
         </p>
+        <div class="text-center">
+          <%= link_to heart_project_path(@project, heart: true), method: :post, class: "btn btn-default btn-md edit-btn" do %>
+            <i class="glyphicon glyphicon-heart"></i> &nbsp; 
+            <strong></strong>
+          <% end %>
+          <%= link_to heart_project_path(@project, heart: false), method: :post, class: "btn btn-default btn-md" do %>
+            <i class="glyphicon glyphicon-heart-empty"></i> &nbsp;
+            <strong></strong>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

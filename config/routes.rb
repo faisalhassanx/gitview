@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   
   resources :projects do
     resources :comments, only: [:create]
+    
+    member do
+      post 'heart'
+    end
   end
   
   get '/about', to: 'pages#about'

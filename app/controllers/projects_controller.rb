@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :heart]
   before_action :require_user, only: [:edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
@@ -46,6 +46,11 @@ class ProjectsController < ApplicationController
     @project.destroy
     flash[:success] = "Project was deleted successfully"
     redirect_to projects_path
+  end
+  
+  def heart
+    Heart.create(heart: params[:heart], developer: current_user, project: @project)
+    redirect_back(fallback_location: root_path)
   end
   
   
