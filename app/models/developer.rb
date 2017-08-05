@@ -13,6 +13,7 @@ class Developer < ApplicationRecord
   validates :github, length: { maximum: 50 }, format: { with: VALID_URL_REGEX }, allow_nil: true
   
   has_many :projects, dependent: :destroy
+  has_many :hearts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :messages, dependent: :destroy
   

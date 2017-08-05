@@ -11,6 +11,7 @@ class Project < ApplicationRecord
   validate :picture_size
   
   belongs_to :developer
+  has_many :hearts, dependent: :destroy
   has_many :project_types
   has_many :types, through: :project_types, dependent: :destroy
   has_many :project_technologies
