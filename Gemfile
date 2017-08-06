@@ -17,6 +17,7 @@ gem 'bootstrap-will_paginate'
 gem 'hirb', '~> 0.7.3'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+gem 'fog', '~> 1.38'
 
 
 group :development, :test do
